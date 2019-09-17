@@ -17,6 +17,7 @@ node {
 
     
     stage('Deploy Build') {
-       sh label: '', script: 'docker run -d --name test-build -p 8082:80 ${env.BUILDIMG}'
+        def deployApp = "docker run -d --name test-build -p 8082:80 ${env.BUILDIMG}"
+       sh label: '', script: "${deployApp}"
     }
 }
