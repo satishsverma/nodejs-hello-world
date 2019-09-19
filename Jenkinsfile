@@ -8,6 +8,7 @@ node {
     
     stage('Clone repository') {
         checkout scm
+        sh "git pull origin master"
         sh "git checkout ${Git_Branch}"
     }
 
